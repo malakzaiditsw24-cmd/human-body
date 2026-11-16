@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رحلة داخل جسم الإنسان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <span class="brand-ico">🫀</span>
+    <div>
+      <h1>رحلة داخل جسم الإنسان</h1>
+      <p>تعلّم · اختبر نفسك · ركّب الأعضاء</p>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="explore">🔍 استكشف الجسم</button>
+    <button class="tab" data-tab="quiz">❓ اختبر معلوماتك</button>
+    <button class="tab" data-tab="build">🧩 ركّب الأعضاء</button>
+  </nav>
+
+  <button id="muteBtn" class="icon-btn" title="تشغيل / إيقاف الصوت">🔊</button>
+</header>
+
+<main>
+  <!-- ========== 1) استكشاف الجسم ========== -->
+  <section id="explore" class="view active">
+    <div class="stage card">
+      <div class="chips" id="sysChips"></div>
+      <div class="body-wrap">
+        <div id="exploreBody" class="body-holder"></div>
+        <div id="tooltip" class="tooltip" hidden></div>
+      </div>
+      <p class="hint-text">👆 اضغط على أي عضو لتعرف معلوماته</p>
+    </div>
+    <aside class="panel card" id="info"></aside>
+  </section>
+
+  <!-- ========== 2) اختبار الأسئلة ========== -->
+  <section id="quiz" class="view">
+    <div class="card quiz-card" id="quizBox"></div>
+  </section>
+
+  <!-- ========== 3) تركيب الأعضاء ========== -->
+  <section id="build" class="view">
+    <div class="stage card">
+      <div class="body-wrap">
+        <div id="buildBody" class="body-holder"></div>
+      </div>
+    </div>
+    <aside class="panel card">
+      <h2 class="panel-title">🧩 ركّب جسم الإنسان</h2>
+      <div class="build-top">
+        <div class="stat">⏱️ <b id="bTime">00:00</b></div>
+        <div class="stat">✅ <b id="bDone">0</b> / <span id="bTotal">0</span></div>
+        <div class="stat">❌ <b id="bMiss">0</b></div>
+      </div>
+      <div class="bar"><i id="bBar"></i></div>
+      <p class="tip">اسحب كل عضو إلى مكانه الصحيح داخل الجسم. على الجوال: اضغط على العضو ثم اضغط على مكانه.</p>
+      <div class="bmsg" id="bMsg"></div>
+      <div class="tray" id="tray"></div>
+      <div class="btn-row">
+        <button class="btn" id="hintBtn">💡 تلميح</button>
+        <button class="btn soft" id="guideBtn">👁️ الخطوط الإرشادية: تشغيل</button>
+        <button class="btn danger" id="restartBtn">🔄 من جديد</button>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<div id="modal" class="modal" hidden><div class="modal-card" id="modalCard"></div></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
